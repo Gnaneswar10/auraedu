@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AuraEdu | Smarter School Management Software</title>
+  <meta name="description" content="AuraEdu is an all-in-one school management platform for administration, attendance, fee management, GPS bus tracking, parent communication, and more." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <div class="nav-logo-icon">🎓</div>
+        Aura<span>Edu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero"     data-section="hero">Home</a></li>
+        <li><a href="#about"    data-section="about">About</a></li>
+        <li><a href="#products" data-section="products">Products</a></li>
+        <li><a href="#features" data-section="features">Features</a></li>
+        <li><a href="#how"      data-section="how">How It Works</a></li>
+        <li><a href="#contact"  data-section="contact">Contact</a></li>
+      </ul>
+      <div style="margin-left:auto; display:flex; gap:12px">
+        <a href="dashboard.html" class="btn btn-outline">Portal Login</a>
+        <a href="#contact" class="btn btn-primary">Request a Demo</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#features">Features</a>
+    <a href="#how">How It Works</a>
+    <a href="#contact">Contact</a>
+    <a href="dashboard.html" class="btn btn-outline" style="margin-top:10px;text-align:center">Portal Login</a>
+    <a href="#contact" class="btn btn-primary" style="margin-top:10px;text-align:center">Request a Demo</a>
+  </div>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section id="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-bg-glow-2"></div>
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Left: Text -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <div class="hero-badge-dot"></div>
+            Trusted by schools across India
+          </div>
+          <h1 class="hero-title">
+            The Smarter Way to Run<br>
+            <span class="gradient-text" id="typewriter">Schools</span>
+          </h1>
+          <p class="hero-sub">
+            AuraEdu is the all-in-one school management platform that handles
+            admissions, attendance, fees, parent communication, GPS bus tracking
+            — so you can focus on education, not paperwork.
+          </p>
+          <div class="hero-btns">
+            <a href="#contact" class="btn btn-primary">🚀 Request a Demo</a>
+            <a href="#products" class="btn btn-outline">Explore Products</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat-item">
+              <strong><span class="counter" data-target="500" data-suffix="+">0+</span></strong>
+              <span>Schools Served</span>
+            </div>
+            <div class="hero-stat-item">
+              <strong><span class="counter" data-target="50000" data-suffix="+">0+</span></strong>
+              <span>Students Managed</span>
+            </div>
+            <div class="hero-stat-item">
+              <strong><span class="counter" data-target="12" data-suffix="+">0+</span></strong>
+              <span>Cities</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Image -->
+        <div class="hero-img-wrap">
+          <img src="hero_dashboard.png" alt="AuraEdu dashboard preview" />
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ STATS BAR ═══════════════════ -->
+  <section id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-number"><span class="counter" data-target="500" data-suffix="+">0+</span></div>
+          <div class="stat-label">Schools Onboarded</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-number"><span class="counter" data-target="50000" data-suffix="+">0+</span></div>
+          <div class="stat-label">Students Tracked</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-number"><span class="counter" data-target="98" data-suffix="%">0%</span></div>
+          <div class="stat-label">Customer Satisfaction</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-number"><span class="counter" data-target="12" data-suffix="+">0+</span></div>
+          <div class="stat-label">Cities Covered</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item reveal reveal-delay-4">
+          <div class="stat-number"><span class="counter" data-target="10" data-suffix=" Yrs">0 Yrs</span></div>
+          <div class="stat-label">Industry Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ ABOUT ═══════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Left -->
+        <div>
+          <span class="section-label reveal">Why AuraEdu</span>
+          <h2 class="section-title reveal reveal-delay-1">
+            You Deserve Software Built<br>
+            <span class="gradient-text">For Your School</span>
+          </h2>
+          <p class="section-sub reveal reveal-delay-2">
+            Most school management software forces you to adapt to their system.
+            AuraEdu is different — flexible, affordable, and designed from the ground
+            up for Indian schools. Don't compromise. You have a choice.
+          </p>
+          <div class="about-pills reveal reveal-delay-3">
+            <div class="pill"><span class="pill-icon">📶</span> Works Offline</div>
+            <div class="pill"><span class="pill-icon">🔒</span> Secure & Private</div>
+            <div class="pill"><span class="pill-icon">📱</span> Android App</div>
+            <div class="pill"><span class="pill-icon">💰</span> Budget Friendly</div>
+            <div class="pill"><span class="pill-icon">🛠️</span> 24/7 Support</div>
+            <div class="pill"><span class="pill-icon">⚡</span> Easy to Use</div>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="about-features">
+          <div class="feature-item reveal reveal-delay-1">
+            <div class="feature-icon">📋</div>
+            <div>
+              <h4>Simple & Easy to Use</h4>
+              <p>Designed for teachers and administrators with no technical background. Get started in minutes, not weeks.</p>
+            </div>
+          </div>
+          <div class="feature-item reveal reveal-delay-2">
+            <div class="feature-icon">💳</div>
+            <div>
+              <h4>Smart Fee Management</h4>
+              <p>Automated SMS alerts for due dates, outstanding balances, and payments received — parents always stay informed.</p>
+            </div>
+          </div>
+          <div class="feature-item reveal reveal-delay-3">
+            <div class="feature-icon">👥</div>
+            <div>
+              <h4>Complete Staff Control</h4>
+              <p>Manage staff profiles, assign roles, control access permissions, and generate payroll — all in one place.</p>
+            </div>
+          </div>
+          <div class="feature-item reveal reveal-delay-4">
+            <div class="feature-icon">🔔</div>
+            <div>
+              <h4>Instant Parent Alerts</h4>
+              <p>Real-time push notifications to parents for attendance, events, fees, and school activities via the mobile app.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PRODUCTS ═══════════════════ -->
+  <section id="products" class="section">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:60px">
+        <span class="section-label reveal">Our Products</span>
+        <h2 class="section-title reveal reveal-delay-1" style="max-width:560px;margin:0 auto 16px">
+          A Complete Ecosystem for <span class="gradient-text">Modern Schools</span>
+        </h2>
+        <p class="section-sub reveal reveal-delay-2" style="margin:0 auto">
+          Six powerful, interconnected tools — each solving a real problem in your school's daily operations.
+        </p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card reveal">
+          <div class="product-icon">🖥️</div>
+          <div class="product-tag">Desktop App</div>
+          <h3>AuraEdu</h3>
+          <p>The core school administration portal. Handles admissions, attendance, fee records, exams, and HR — works standalone even without internet.</p>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1">
+          <div class="product-icon">📱</div>
+          <div class="product-tag">Parent Mobile App</div>
+          <h3>qPASS</h3>
+          <p>Puts parents in the loop. Real-time bus tracking, attendance alerts, fee status, and school announcements — all from their phone.</p>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2">
+          <div class="product-icon">🎓</div>
+          <div class="product-tag">Employee App</div>
+          <h3>campusNOTE</h3>
+          <p>Empowers teachers in the classroom. Record attendance, grades, and activities on a tablet — syncs automatically when back online.</p>
+        </div>
+
+        <div class="product-card reveal reveal-delay-3">
+          <div class="product-icon">🌐</div>
+          <div class="product-tag">Online Web Portal</div>
+          <h3>Xpress</h3>
+          <p>A cloud-based web portal for remote access to school data, reports, and dashboards. Access from anywhere, any device.</p>
+        </div>
+
+        <div class="product-card reveal reveal-delay-4">
+          <div class="product-icon">🚌</div>
+          <div class="product-tag">GPS Tracking</div>
+          <h3>busNOTE</h3>
+          <p>Live GPS tracking of school buses. Parents know exactly where the bus is, and the school gets real-time fleet visibility.</p>
+        </div>
+
+        <div class="product-card reveal reveal-delay-5">
+          <div class="product-icon">📣</div>
+          <div class="product-tag">Communication</div>
+          <h3>SMS & Voice Gateway</h3>
+          <p>Bulk SMS and automated voice messages for fee reminders, event notices, and emergency alerts — reach every parent instantly.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FEATURES ═══════════════════ -->
+  <section id="features" class="section">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:60px">
+        <span class="section-label reveal">Everything You Need</span>
+        <h2 class="section-title reveal reveal-delay-1" style="max-width:580px;margin:0 auto 16px">
+          Every Aspect of School Management, <span class="gradient-text">Covered</span>
+        </h2>
+        <p class="section-sub reveal reveal-delay-2" style="margin:0 auto">
+          From the first day of admissions to graduation — AuraEdu handles every administrative task so your staff can focus on students.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">📅</div>
+          <h4>Attendance Management</h4>
+          <p>Mark and track daily student and staff attendance. Instant SMS alerts to parents for absences, with monthly reports.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">💰</div>
+          <h4>Fee Management</h4>
+          <p>Collect fees, generate receipts, track outstanding dues, and trigger automated payment reminders via SMS.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">📝</div>
+          <h4>Exam & Results</h4>
+          <p>Schedule exams, enter marks, auto-calculate grades and ranks, and publish digital report cards instantly.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">🚌</div>
+          <h4>Transport & GPS Tracking</h4>
+          <p>Manage bus routes, assign students to vehicles, and give parents live GPS tracking via the mobile app.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-icon">📚</div>
+          <h4>Library Management</h4>
+          <p>Catalog books, manage issue and return, track overdue items, and prevent loss with a digital inventory.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-5">
+          <div class="service-icon">👔</div>
+          <h4>HR & Payroll</h4>
+          <p>Maintain staff records, track leave, set roles and permissions, and auto-generate salary slips each month.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">🎓</div>
+          <h4>Admissions & Enquiry</h4>
+          <p>Manage the full admission pipeline — from online enquiry to enrollment — with zero paperwork.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">🔔</div>
+          <h4>Parent Communication</h4>
+          <p>Push notifications, SMS, and voice messages keep parents informed about attendance, fees, events, and results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
+  <section id="how" class="section">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:72px">
+        <span class="section-label reveal">Get Started</span>
+        <h2 class="section-title reveal reveal-delay-1" style="max-width:500px;margin:0 auto 16px">
+          Up and Running in <span class="gradient-text">3 Simple Steps</span>
+        </h2>
+        <p class="section-sub reveal reveal-delay-2" style="margin:0 auto">
+          We handle everything — from setup to training. Your team will be fully operational within days, not months.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3>Book a Free Demo</h3>
+          <p>Schedule a personalised walkthrough with our team. We'll understand your school's exact needs and show you how AuraEdu fits in.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-number">2</div>
+          <h3>We Set Everything Up</h3>
+          <p>Our team handles installation, data migration, and system configuration — tailored to match your school's structure and workflows.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-4">
+          <div class="step-number">3</div>
+          <h3>Go Live with Confidence</h3>
+          <p>We train your staff, hand over full access, and stay available with 24/7 support so you're never left on your own.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Left -->
+        <div class="contact-info reveal">
+          <span class="section-label">Get In Touch</span>
+          <h2>Ready to Transform<br><span class="gradient-text">Your School?</span></h2>
+          <p>Talk to our team today. Whether you want a demo, a custom quote, or just have questions — we're here to help.</p>
+
+          <ul style="list-style:none; margin-top:32px; padding:0; display:flex; flex-direction:column; gap:20px;">
+            <li style="display:flex; align-items:center; gap:16px;">
+              <div style="background:var(--bg-card); border:1px solid var(--border-glass); width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0;">⏱️</div>
+              <span style="font-size:0.95rem; font-weight:500;">Quick 15-minute intro call</span>
+            </li>
+            <li style="display:flex; align-items:center; gap:16px;">
+              <div style="background:var(--bg-card); border:1px solid var(--border-glass); width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0;">💻</div>
+              <span style="font-size:0.95rem; font-weight:500;">Customised live software demo</span>
+            </li>
+            <li style="display:flex; align-items:center; gap:16px;">
+              <div style="background:var(--bg-card); border:1px solid var(--border-glass); width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0;">📊</div>
+              <span style="font-size:0.95rem; font-weight:500;">Tailored quote based on your size</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form reveal reveal-delay-2">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Principal / Manager" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="school">School / Institution Name</label>
+              <input type="text" id="school" placeholder="Your school name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="you@yourschool.edu.in" required />
+            </div>
+            <div class="form-group">
+              <label for="interest">I'm interested in…</label>
+              <select id="interest">
+                <option value="">Select a product or service</option>
+                <option>AuraEdu (Desktop Admin)</option>
+                <option>qPASS (Parent App)</option>
+                <option>busNOTE (GPS Tracking)</option>
+                <option>Xpress (Web Portal)</option>
+                <option>SMS & Voice Gateway</option>
+                <option>Full Suite Demo</option>
+                <option>Custom Development</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Anything else you'd like us to know?</label>
+              <textarea id="message" placeholder="Number of students, current challenges, etc."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;">
+              🚀 Send My Request
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-logo">Aura<span>Edu</span></div>
+        <p class="footer-copy">© 2024 Teacher Note IT Solutions. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Refund Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
