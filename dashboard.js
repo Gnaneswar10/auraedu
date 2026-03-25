@@ -11,12 +11,20 @@ const defaultStudents = [
   { id: 5, name: 'Vivaan Reddy', roll: '105', grade: '9th Grade', parentContact: '9876543214', feeTotal: 40000, feePaid: 40000, isPresent: true }
 ];
 
-// Initialize LocalStorage if empty
-if (!localStorage.getItem('AuraEdu_students')) {
-  localStorage.setItem('AuraEdu_students', JSON.stringify(defaultStudents));
+// Safer LocalStorage Initialization
+let students;
+try {
+  const stored = localStorage.getItem('AuraEdu_students');
+  if (stored) {
+    students = JSON.parse(stored);
+    if (!Array.isArray(students)) throw new Error('Not an array');
+  } else {
+    throw new Error('No data');
+  }
+} catch (err) {
+  students = [...defaultStudents];
+  localStorage.setItem('AuraEdu_students', JSON.stringify(students));
 }
-
-let students = JSON.parse(localStorage.getItem('AuraEdu_students'));
 
 function saveToLocalStorage() {
   localStorage.setItem('AuraEdu_students', JSON.stringify(students));
