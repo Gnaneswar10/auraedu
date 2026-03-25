@@ -35,6 +35,13 @@
         <button class="nav-item" data-view="fees">
           <span class="nav-icon">💰</span> Fee Management
         </button>
+        <div class="nav-section" style="margin-top:24px">REPORTS</div>
+        <button class="nav-item" data-view="reports">
+          <span class="nav-icon">📈</span> Analytics
+        </button>
+        <button class="nav-item" data-view="announcements">
+          <span class="nav-icon">📢</span> Announcements
+        </button>
       </nav>
       <div class="sidebar-footer">
         <a href="index.html" class="nav-item btn-logout">
@@ -202,7 +209,7 @@
           <div class="view-header">
             <h1 class="view-title">Fee Management</h1>
           </div>
-          
+
           <div class="panel">
             <table class="data-table" id="fees-table">
               <thead>
@@ -218,6 +225,115 @@
                 <!-- Populated by JS -->
               </tbody>
             </table>
+          </div>
+        </div>
+
+        <!-- REPORTS VIEW -->
+        <div class="view" id="view-reports">
+          <div class="view-header">
+            <div>
+              <h1 class="view-title">Analytics & Reports</h1>
+              <p class="view-sub">Comprehensive insights into school performance</p>
+            </div>
+            <button class="btn btn-primary" id="btn-export-report">📥 Export Report</button>
+          </div>
+
+          <div class="stats-grid" style="margin-bottom:32px">
+            <div class="stat-card">
+              <div class="stat-icon green">📊</div>
+              <div class="stat-info">
+                <h3>Attendance Rate</h3>
+                <h2 id="report-attendance-rate">0%</h2>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon blue">💵</div>
+              <div class="stat-info">
+                <h3>Collection Rate</h3>
+                <h2 id="report-collection-rate">0%</h2>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon purple">👥</div>
+              <div class="stat-info">
+                <h3>Active Students</h3>
+                <h2 id="report-active-students">0</h2>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon red">📉</div>
+              <div class="stat-info">
+                <h3>Defaulters</h3>
+                <h2 id="report-defaulters">0</h2>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:2fr 1fr; gap:24px">
+            <div class="panel">
+              <div class="panel-header">
+                <h3>Monthly Attendance Trend</h3>
+              </div>
+              <div id="attendance-chart" style="padding:24px; text-align:center; color:var(--text-muted)">
+                Chart will be displayed here
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header">
+                <h3>Fee Collection Summary</h3>
+              </div>
+              <div style="padding:20px">
+                <div style="margin-bottom:16px">
+                  <div style="display:flex; justify-content:space-between; margin-bottom:4px">
+                    <span style="font-size:0.85rem; color:var(--text-muted)">Total Expected</span>
+                    <span style="font-weight:600" id="fee-expected">₹0</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; margin-bottom:4px">
+                    <span style="font-size:0.85rem; color:var(--text-muted)">Collected</span>
+                    <span style="font-weight:600; color:var(--green)" id="fee-collected">₹0</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between">
+                    <span style="font-size:0.85rem; color:var(--text-muted)">Pending</span>
+                    <span style="font-weight:600; color:var(--red)" id="fee-pending">₹0</span>
+                  </div>
+                </div>
+                <div style="background:var(--bg-card); height:8px; border-radius:8px; overflow:hidden; margin-top:16px">
+                  <div id="fee-progress-bar" style="background:var(--green); height:100%; width:0%; transition:width 0.5s"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-top:24px">
+            <div class="panel-header">
+              <h3>Grade-wise Statistics</h3>
+            </div>
+            <table class="data-table" id="grade-stats-table">
+              <thead>
+                <tr>
+                  <th>Grade</th>
+                  <th>Total Students</th>
+                  <th>Avg Attendance</th>
+                  <th>Fee Collection</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ANNOUNCEMENTS VIEW -->
+        <div class="view" id="view-announcements">
+          <div class="view-header">
+            <h1 class="view-title">Announcements</h1>
+            <button class="btn btn-primary" id="btn-create-announcement">📢 New Announcement</button>
+          </div>
+
+          <div id="announcements-list" style="display:flex; flex-direction:column; gap:16px">
+            <!-- Populated by JS -->
           </div>
         </div>
 
@@ -268,10 +384,53 @@
     </div>
   </div>
 
+  <!-- Modal: Create Announcement -->
+  <div class="modal" id="announcement-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Create Announcement</h2>
+        <button class="close-modal" id="btn-close-announcement-modal">✖</button>
+      </div>
+      <form id="announcement-form">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" id="announcement-title" required placeholder="E.g. School Holiday Notice">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="announcement-content" required placeholder="Enter your announcement message..." style="min-height:120px"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Type</label>
+            <select id="announcement-type" required>
+              <option value="general">General</option>
+              <option value="urgent">Urgent</option>
+              <option value="event">Event</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Target Audience</label>
+            <select id="announcement-audience" required multiple style="height:80px">
+              <option value="all" selected>Everyone</option>
+              <option value="parents">Parents</option>
+              <option value="teachers">Teachers</option>
+              <option value="students">Students</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="btn-cancel-announcement-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Publish Announcement</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <div class="toast" id="toast"></div>
 
-  <script src="dashboard.js"></script>
+  <script type="module" src="/src/dashboard-app.js"></script>
 </body>
 </html>
 
